@@ -1,0 +1,29 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        String a="";
+        String b="";
+        String g="";
+        String text = in.nextLine();
+        for(int i=0; i<text.length();i++){
+            if(text.charAt(i)==' '){
+                a=text.substring(0,i);
+                b=text.substring(i+1);
+            }
+        }
+        for(int i=0; i<a.length();i++){
+            if (!(b.contains(a.substring(i,i+1)))){
+                g=g+a.substring(i,i+1);
+            }
+            else{
+                b=b.replaceFirst(a.substring(i,i+1),"");
+            }
+        }
+        System.out.println(g);
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+    }
+}
